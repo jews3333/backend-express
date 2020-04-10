@@ -6,6 +6,6 @@ const router = require('./router');
 app.use('/', router);
 
 app.listen(PORT, () => {
-    console.log(`PORT : ${PORT}`);
+    console.log(`Stating server PORT = localhost:${PORT}`);
 })
 
