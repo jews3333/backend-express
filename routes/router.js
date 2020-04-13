@@ -3,7 +3,7 @@ const multer = require('multer');
 const fs = require('fs');
 const path = require('path');
 const router = express.Router();
-const mysql = require('./connection');
+const mysql = require('../connection');
 
 router.get('/data', (req, res) => {
     mysql.query("select * from topic;", (err, rows) => {
