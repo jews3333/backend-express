@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const mysql = require('../connection');
+const db = require('../connection');
 
 router.get("/", (req, res) => {
     const sql = "SELECT * FROM board WHERE idx BETWEEN ? AND ?";
-    mysql.query(sql, [1,10], (err, rows) => {
+    db.query(sql, [1,10], (err, rows) => {
         if(!err){
             console.log(rows);
             res.send(rows);
@@ -17,7 +17,7 @@ router.get("/", (req, res) => {
 
 router.get('/:idx', (req, res) => {
     const sql = "SELECT * FROM board WHERE idx=?";
-    mysql.query(sql,[req.params.idx], (err, rows) => {
+    db.query(sql,[req.params.idx], (err, rows) => {
         if(!err){
             console.log(rows);
             res.send(rows);
