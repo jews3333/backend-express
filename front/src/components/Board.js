@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Board extends Component {
+const Board = ({list}) => {
 
-    componentDidMount(){
-        fetch("/board")
-        .then(res => res.json())
-        .then(data => console.log(data))
-    }
-
-    render(){
-        return (
-            <div>
-                board
-            </div>
-        )
-    }
+    return (
+        list ? 
+        <div>
+            {list.map((item) => {
+                return <p key={item.idx}>{item.title}</p>
+            })}
+        </div>
+        : null
+    )
 }
+
+export default Board;

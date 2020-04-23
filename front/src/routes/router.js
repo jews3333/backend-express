@@ -7,7 +7,7 @@ const Routes = () => {
     return (
         <Router>
             <Switch>
-                <Route exact path="/"/>
+                <Route exact path="/" component={Board}/>
                 <Route path="/data" component={Data}/>
                 <Route path="/upload" component={Upload}/>
                 <Route path="/board/:idx" component={View}/>
